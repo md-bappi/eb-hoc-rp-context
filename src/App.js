@@ -1,17 +1,10 @@
 import React from "react";
-import { UserProvider } from "./utls/userContext";
-import { Comp1 } from "./components/Comp1";
+import User from "./components/User";
 
 const App = () => {
-  const user = {
-    name: "fahim",
-    age: 20,
-  };
   return (
     <div>
-      <UserProvider value={user}>
-        <Comp1 />
-      </UserProvider>
+      <User render={(isLoggedIn) => (isLoggedIn ? "Fahim" : "Visitor")} />
     </div>
   );
 };
