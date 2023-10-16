@@ -1,12 +1,17 @@
 import React from "react";
-import ClickCounter from "./components/ClickCounter";
-import HoverCounter from "./components/HoverCounter";
+import { UserProvider } from "./utls/userContext";
+import { Comp1 } from "./components/Comp1";
 
 const App = () => {
+  const user = {
+    name: "fahim",
+    age: 20,
+  };
   return (
     <div>
-      <ClickCounter />
-      <HoverCounter />
+      <UserProvider value={user}>
+        <Comp1 />
+      </UserProvider>
     </div>
   );
 };
